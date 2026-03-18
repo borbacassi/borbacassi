@@ -1,1 +1,36 @@
+name: Tetris Commits
 
+on:
+  schedule:
+    - cron: "0 0 * * *"   # roda todo dia à meia noite
+  workflow_dispatch:        # permite rodar manualmente
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependências
+        run: pip install requests
+
+      - name: Gerar SVG do Tetris
+        env:
+          GITHUB_USERNAME: ${{ github.repository_owner }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python generate_tetris.py
+
+      - name: Commit e push do SVG
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add tetris.svg
+          git diff --cached --quiet || git commit -m "🎮 Atualiza Tetris SVG"
+          git push

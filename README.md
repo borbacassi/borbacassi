@@ -9,6 +9,6 @@
 ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![SQL](https://img.shields.io/badge/-SQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
 
-Contato: [LinkedIn](https://www.linkedin.com/in/cassiano-borba-49119835a/) [E-mail](mailto:bcassiano888@gmail.com)
+Contato: [LinkedIn](https://www.linkedin.com/in/cassiano-borba-49119835a/) | [E-mail](mailto:bcassiano888@gmail.com)
 </div>
 
